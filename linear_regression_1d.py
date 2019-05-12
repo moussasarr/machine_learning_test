@@ -1,4 +1,4 @@
-#Demonstrating linear regression formulas through code
+#Verifying linear regression formulas through code
 
 import numpy as np
 import matplotlib.pyplot as plt
