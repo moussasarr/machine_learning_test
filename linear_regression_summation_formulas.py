@@ -20,9 +20,21 @@ Y = A[:, 1]
 denominator = X.dot(X) - (X.mean() * X.sum())
 m =  (Y.dot(X) - Y.mean() * X.sum())/ denominator
 b = (Y.mean() * X.dot(X) - X.mean() * Y.dot(X))/ denominator
-
-#Plotting the calculated line of best fit
+# calculated line of best fit
 bestFit = m*X + b
+
+# Calculating R-squared
+ERRi = Y - bestFit
+SSTOTi = Y - Y.mean()
+SSresidual = ERRi.dot(ERRi)
+SStotal =  SSTOTi.dot(SSTOTi)
+Rsquare = 1 - SSresidual/SStotal
+print(Rsquare)
+
+
+
+
+
 plt.scatter(X, Y)
 plt.plot(X, bestFit)
 plt.show()

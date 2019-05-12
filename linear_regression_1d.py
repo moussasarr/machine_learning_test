@@ -50,10 +50,19 @@ b2 =  (meanY*meanXsq - meanX*meanXY)/ denominator
 print(b2)
 print(b)
 
-
 #Plotting the calculated line of best fit
-A = np.linspace(0, 110)
 bestFit = m*X + b2
+
+#Calculating Rsquared
+ERRi = Y - bestFit
+SSTOTi = Y - Y.mean()
+SSresidual = ERRi.dot(ERRi)
+SStotal =  SSTOTi.dot(SSTOTi)
+Rsquare = 1 - SSresidual/SStotal
+print(Rsquare)
+
+
+#Plotting our predict model along with the scatter
 plt.scatter(X, Y)
 plt.plot(X, bestFit)
 plt.show()
