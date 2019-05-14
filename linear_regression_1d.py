@@ -62,7 +62,7 @@ Rsquare = 1 - SSresidual/SStotal
 print(Rsquare)
 
 
-#Plotting our predict model along with the scatter
+#Plotting our predict model along with the
 plt.scatter(X, Y)
 plt.plot(X, bestFit)
 plt.show()
